@@ -6,11 +6,11 @@
             </div>
             <div style="display: flex;flex-direction: row;gap: 10px;">
                 <button style="background-color: rgb(204, 41, 41);color: white; padding: 12px;width: 165px;" 
-                    mat-raised-button color="primary">ADD TO BAG</button>
+                    mat-raised-button color="primary" (click)="handleAddBook(selectBook)">ADD TO BAG</button>
 
                 <button style="background-color: rgba(0, 0, 0, 0.84);color: white;width: 165px;" mat-raised-button color="primary" > 
                     <div style="display: flex;flex-direction: row;" >
-                        <mat-icon svgIcon="heart-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
+                        <mat-icon svgIcon="heart-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 5px;margin-top: 12px;"></mat-icon>
                         <span style="padding:6px;">WISH LIST</span>
                     </div>
              </button>            

@@ -21,7 +21,7 @@ export class BookContainerComponent implements OnInit {
 
     console.log(data.bookId);
     // this.router.navigate([`/bookdetails`]);
-   this.router.navigate([`/bookdetails`,data.bookId]);
+   this.router.navigate([`/dashboard/bookdetails`,data.bookId]);
     //console.log(this.bookList)
    
   }
