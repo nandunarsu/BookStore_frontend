@@ -1,0 +1,13 @@
+<div class="book-main-cnt" *ngFor="let book of booksData">
+    <div class="book-photo-cnt" (click)="handleClick(book)">
+        <img src="{{book.bookImage}}" alt="bookimage" class="book-photo">
+    </div>
+    <div class="book-details-cnt">
+      <strong>{{book.bookName}}</strong>
+      <span class="book-author-name">by {{book.authorName}}</span>
+      <div style="background-color: green;width: 26px;height: 15px;padding-bottom: 1px;">
+      <span style="font-size: 12px;color: #ffffff;font-family: roboto;">4.5*</span>
+    </div>
+      <span class="book-price">Rs. {{book.price}}</span>
+</div>
+</div>

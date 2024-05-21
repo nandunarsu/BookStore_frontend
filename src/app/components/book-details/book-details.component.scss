@@ -1,0 +1,44 @@
+.book-details-btn1{
+    background: #df1a1a 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    color: white;
+    border-radius: 1px;
+    width: 80px;
+    height: 38px;
+}
+.book-details-btn2{
+    background: #0c0c0c 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    color: white;
+    border-radius: 1px;
+    width: 80px;
+    height: 38px;
+}
+.heart-icon{
+    width: 10px;
+    height: 10px;
+}
+.book-options{
+   display: flex;
+   flex-direction: row;
+}
+.book-author-name{
+    text-align: left;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+}
+
+.book-price{
+    font-weight: bold;
+    color: #0A0102;
+    width: 58px;
+    height: 16px;
+}
+.book-deails-main-cnt{
+    display: flex;
+    flex-direction: row;
+    width:900px;
+    justify-content: center;
+    align-items: center;
+}

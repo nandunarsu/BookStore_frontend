@@ -1,0 +1,53 @@
+<div style="margin: 9%;margin-left: 15%;border: 1px solid #ccc;box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);padding: 15px;">
+<div class="book-deails-main-cnt" >
+        <div style="width:700px ;" > 
+            <div>
+            <img src="{{selectBook.bookImage}}" style="width: 250px; height: 250px; padding: 40px;">
+            </div>
+            <div style="display: flex;flex-direction: row;gap: 10px;">
+                <button style="background-color: rgb(204, 41, 41);color: white; padding: 12px;width: 165px;" 
+                    mat-raised-button color="primary">ADD TO BAG</button>
+
+                <button style="background-color: rgba(0, 0, 0, 0.84);color: white;width: 165px;" mat-raised-button color="primary" > 
+                    <div style="display: flex;flex-direction: row;" >
+                        <mat-icon svgIcon="heart-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
+                        <span style="padding:6px;">WISH LIST</span>
+                    </div>
+             </button>            
+            </div>       
+        </div>
+        <div >
+            <strong>{{selectBook.bookName}}</strong>
+            <br>
+      <span class="book-author-name">{{selectBook.authorName}}</span>
+      <div style="background-color: green;width: 26px;height: 15px;padding-bottom: 1px;">
+      <span style="font-size: 12px;color: #ffffff;font-family: roboto;font-weight: bold;">4.5*</span>
+    </div>
+      <span class="book-price">Rs. {{selectBook.price}}</span>
+      <hr>
+      <h3>Book Details</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nesciunt rem asperiores similique
+        magni deserunt quos, fugit itaque? Mollitia, nostrum? Distinctio perferendis neque fuga eligendi est</p>
+        <hr>
+        <span>Customer Feedback</span>
+        <div>
+            <mat-card>
+                <span>Overall Rating</span>
+                <div>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
+                    
+                </div>
+            </mat-card>
+        </div>
+        </div>
+
+        </div>
+    </div>
+  
+
+
+

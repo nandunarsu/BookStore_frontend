@@ -1,0 +1,88 @@
+<div class="cart-outer-cnt">
+    <br>
+    <div class="count-cnt">
+        <span>My cart(1)</span>
+        <div class="loc-icon-cnt"><span class="loc-icon"> <mat-icon svgIcon="location-icon"></mat-icon>
+            R T Nagar main Road,No... <mat-icon svgIcon="drop-down-icon"></mat-icon></span></div>
+    </div>
+    <br>
+    <div class="img-cnt">
+
+        <div class="content">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7zO-Lb1JbIGmdlDGrB13jqD_TTapTmasXFg&s" alt="">
+            <div>
+                <span class="booktitle">name</span>
+                <span style="color: #616161;">author</span>
+                <div class="rating-cnt">
+                    <span class="sellingprice">Rs.price<span class="originalprice">Rs.2000</span></span>
+                    <div class="count">
+                        <!-- <span class="increament" (click)="handlecount('minus',Book)">-</span> <span
+                            class="countvalue">{{Book.quantity}}</span> <span class="increament"
+                            (click)="handlecount('add',Book)">+</span> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="button" mat-raised-button color="primary" >Clear</button>
+
+    </div>
+</div>
+<div class="customer-details-outer-cnt">
+    <div class="cust-det-cnt">
+        <div>
+            &nbsp; &nbsp; &nbsp;  Customer Details
+        </div>
+        <div>
+            <button mat-stroked-button color="warn">ADD NEW ADDRESS</button>
+        </div>
+    </div>
+    <div class="details">
+        <div class="name-mobile-cnt">
+            <div class="field-cnt">
+                <div>FullName</div>
+                <div><input type="text" class="ip" placeholder="name"></div>
+            </div>
+            <div class="field-cnt">
+                <div>MobileNumber</div>
+                <div><input type="tel" class="ip"></div>
+            </div>
+        </div>
+        <div class="address-cnt">
+            <div>Address</div>
+            
+            <div> <textarea class="address-ip" placeholder="Enter your address here">#1441, 7th cross R T Nagar Bengaluru, Karnataka 560102
+                Sarawathi Nilaya Bengalulru, address</textarea></div>
+        </div>
+        <div class="city-town">
+            <div class="field-cnt">
+                <div>City</div>
+                <div><input type="text" class="ip" placeholder="city"></div>
+            </div>
+            <div class="field-cnt">
+                <div>State</div>
+                <div><input type="tel" class="ip" placeholder="state"></div>
+            </div>
+        </div>
+        <div class="type" >
+            Type
+            <div >
+        
+                <div>
+                   <input type="radio" name="address">Home
+                </div>
+                <div>
+                    <input type="radio" name="address" >Office
+                </div>
+                 <div>
+                    <input type="radio" name="address">others
+                </div> 
+            </div>
+        </div>
+        <div class="checkout-btn">
+                <button mat-raised-button color="primary">Continue</button>
+        </div>
+       
+    </div>
+</div>
+<div class="bottom"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Order Summer</div>
