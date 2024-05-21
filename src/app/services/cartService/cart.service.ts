@@ -10,4 +10,7 @@ export class CartService {
   getCartApi(){
     return this.httpService.cartApiCall('/Cart');
   }
+  addCartApi(data:any){
+    return this.httpService.addToCartApiCall('/Cart',data);
+  }
 }

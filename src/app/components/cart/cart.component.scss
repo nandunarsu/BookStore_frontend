@@ -91,10 +91,22 @@ display: flex;
 
     font-weight: bold;
 }
-.button
+.button1
 {
     height: fit-content;
+    background-color: rgb(29, 29, 155) !important;
+    color: white !important;
+    margin-left: 200px;
 }
+.button2
+{
+    height: fit-content;
+    background-color: rgb(29, 29, 155) !important;
+    color: white !important;
+    //margin-left: 5%;
+}
+
+
 .count
 {
     // height: 100%;
