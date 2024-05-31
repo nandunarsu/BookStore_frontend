@@ -9,7 +9,7 @@ export class SearchPipe implements PipeTransform {
     if(!items) return []
     if(!searchString) return items
     searchString = searchString.toLowerCase()
-    const filterNotes=items.filter((item: {title: string}) => item.title.toLowerCase().includes(searchString));
+    const filterNotes=items.filter((item: {bookName: string}) => item.bookName.toLowerCase().includes(searchString));
     console.log(filterNotes);
     return filterNotes
   }
