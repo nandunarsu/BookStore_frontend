@@ -1,13 +1,27 @@
-<div class="book-main-cnt" *ngFor="let book of booksData">
+<div class="book1-main-cnt"  >
+      <span class="book">Books</span>
+      <span style="margin-top: 10px;">({{booksData.length}})</span>
+  </div>
+<div style="margin-left: 132px;margin-top: 5px;">
+  <div style="display: flex;flex-direction: row;width: 100%;flex-wrap: wrap;">
+<div class="book-main-cnt" *ngFor="let book of booksData | search : searchString">
     <div class="book-photo-cnt" (click)="handleClick(book)">
         <img src="{{book.bookImage}}" alt="bookimage" class="book-photo">
     </div>
     <div class="book-details-cnt">
-      <strong>{{book.bookName}}</strong>
+      <span style="width: 130px;height: 19px;text-align: left;font: normal normal normal 14px/19px Roboto;letter-spacing: 0px;
+      color: #0A0102;overflow: hidden;">{{book.bookName}}</span>
       <span class="book-author-name">by {{book.authorName}}</span>
-      <div style="background-color: green;width: 26px;height: 15px;padding-bottom: 1px;">
-      <span style="font-size: 12px;color: #ffffff;font-family: roboto;">4.5*</span>
-    </div>
-      <span class="book-price">Rs. {{book.price}}</span>
+      <div style="display: flex;flex-direction: row;">
+      <span class="rating">4.5 * </span> 
+        <span class="outof">&nbsp;(20)</span>
+    
+  </div>
+    
+      <span class="book-price">Rs. {{book.price}}<span class="originalprice">Rs.2000</span></span>
 </div>
 </div>
+</div>
+</div>
+
+

@@ -8,9 +8,13 @@ export class UserService {
 
   constructor(private httpService:HttpService) { }
   loginApi(data:any){
-    return this.httpService.loginsignupApiCall(data, '/Registration/login');
+    return this.httpService.loginsignupApiCall(data, '/User/login');
    }
    signupApi(data:any){
-     return this.httpService.loginsignupApiCall(data, '/Registration');
+     return this.httpService.loginsignupApiCall(data, '/User');
    }
+   getNameByTokenApiCall()
+  {
+    return this.httpService.getNamebyToken();
+  }
 }

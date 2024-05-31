@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/dataService/data.service';
 })
 export class BookComponent implements OnInit {
 
-  bookList:any[]=[];
+  bookList:[]=[];
   constructor(private bookService:BookService,private dataService:DataService) { }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class BookComponent implements OnInit {
         
         this.bookList = res;
         console.log(this.bookList)
-this.dataService.changeAllBookList(res.data)
+       // this.dataService.changeAllBookList(res.data)
       }
         ,(err)=>console.log((err)))
 //this.dataService.allBookState.subscribe((res)=> (this.bookList=res));

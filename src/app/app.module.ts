@@ -13,6 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -23,6 +24,11 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 import { CartComponent } from './components/cart/cart.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 import { LoginComponent } from './components/login/login.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { OrderComponent } from './components/order/order.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { OrderplacedComponent } from './components/orderplaced/orderplaced.component';
+import { SearchPipe } from './pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,11 @@ import { LoginComponent } from './components/login/login.component';
     BookDetailsComponent,
     CartComponent,
     CustomerDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    OrderComponent,
+    WishlistComponent,
+    OrderplacedComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -51,7 +61,9 @@ import { LoginComponent } from './components/login/login.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,67 +1,127 @@
- .header-main-cnt {
-        width: 100%;
-        background-color: brown;
-        display: flex;
-        justify-content: space-around;
- }
-.header-cnt{
+ .header-main-cnt{
     display: flex;
-    align-items: center;
-    width: 80%;
-}
-
-.header-book-cnt{
-    display: flex;
+    width: 100%;
     flex-direction: row;
-    margin-left: 10%;
+    background-color: #A03037;
     color: white;
-    font-size: 0.7em; 
-    gap: 0.5%; 
-    margin-top: 0.5%; 
-}
-.header-book-cnt span {
-    padding: 10px;
-    font-size: 20px; 
-}
+    height: 60px;
+ }
+
+ .education-pic{
+    margin-left: 158px;
+    margin-top: 18.6px;
+    width: 31px;
+    height: 24px;
+ }
+ .search-input{
+   
+    height: 16px;
+    background: #FCFCFC 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    border: none;
+    margin: 6px 0px 6px 0px;
+    outline: none;
+    //margin-right: 542px;
+ }
 
 .header-search-cnt{
-    display: flex;
-    align-items: center;
-    margin-left: 4%;
-}
-.search-input {
-    width: 100%; 
-    padding: 1.1%; 
-    border-radius: 0.5%; 
-    text-indent: 5%;
-    border: none;
-    outline: none;
-    border-radius: 7px;
-}
-.search-icon {
-    height: 2%;
-    width: 3.125%; 
-    margin-left: -101%; 
-}  
+margin: 14px 0px 13px 52px;
+width: 490px;
+height: 33px;
 
-.header-cart-cnt{
-    display: flex;
-    flex-direction: column;
-    margin-left: 20%;
-    color: white;
-    font-size: 0.7em; 
-    gap: 0.5%; 
-    margin-top: 0.5%; 
-} 
-.header-cart-cnt span{
-    margin-left: 5px;
+background: #FCFCFC 0% 0% no-repeat padding-box;
+border-radius: 3px;
 }
-.header-profile-cnt{
+
+ .header-cart-cnt{
+   display: flex;
+   flex-direction: column;
+   margin-left: 78px;
+   color: white;
+   font-size: 10px;
+   gap: 5px;
+   margin-top: 10px;
+   cursor: pointer;
+    
+ }
+ .bookstore{
+    width: 91px;
+height: 26px;
+text-align: left;
+//padding: 5px;
+margin: 17px 0px 17px 5px;
+font: normal normal normal 20px/26px Roboto;
+ }
+ .book-main-cnt{
+
+    margin-top: 26px;
+    margin-left: 18%;
     display: flex;
-    flex-direction: column;
-    margin-left: 7%; 
-    color: white;
-    font-size: 0.7em; 
-    gap: 0.5%; 
-    margin-top: 0.5%; 
+    flex-direction: row;
+
+}
+.search-icon{
+   width: 13px;
+height: 13px;
+margin: 5px;
+}
+.book
+{
+height: 33px;
+text-align: left;
+font: normal normal normal 25px/33px Roboto;
+letter-spacing: 0px;
+color: #0A0102;
+}
+.profile {
+   display: flex;
+   flex-direction: column;
+   margin-left: 235px;
+   color: white;
+   font-size: 10px;
+   gap: 5px;
+   margin-top: 10px;
+   cursor: pointer;
+}
+.profile-history {
+   // border: 2px solid red;
+   width: 280px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   // padding: 2% 4%;
+   gap: 6px;
+}
+.profile-history span{
+   font-size: 18px;
+}
+
+.login-signup button {
+   border: 1px solid red;
+   // padding: 5px 10px;
+   // border-radius: 5px;
+   // margin-bottom: 5px;
+   color: red;
+}
+.login-signin{
+   // width: 100%;
+   width: 200px;
+   height: fit-content;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   // margin: 10%;
+   flex-direction: column;
+   gap: 8px;
+   cursor: pointer;
+}
+.login-signin button{
+   border: 1px solid red;
+   // padding: 0px 10px;
+   border-radius: 5px;
+   // margin-bottom: 5px;
+   height: 30px;
+   width: 100px;
+   color: red;
 }

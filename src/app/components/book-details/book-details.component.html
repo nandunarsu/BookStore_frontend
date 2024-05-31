@@ -1,52 +1,122 @@
-<div style="margin: 9%;margin-left: 15%;border: 1px solid #ccc;box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);padding: 15px;">
+
+<div style="margin:19px 157px 0px 157px;">
+    <span class="home-book">Home / </span>
+        <span class="Homebook">Book</span>
+    <div style="margin:13px 157px 0px 0px;display:flex;flex-direction: row;">
+    <div>
+        <div style="width: 44px;height: 54px;border: 1px solid #D1D1D1;border-radius: 0px 1px 1px 1px;">
+            <img style="width: 37px;height: 45px;padding: 4px;" src="https://m.media-amazon.com/images/I/617rPny7-LL._AC_UF1000,1000_QL80_.jpg" alt="">
+        </div>
+        <div style="width: 44px;height: 54px;border: 1px solid #D1D1D1;border-radius: 0px 1px 1px 1px;">
+            <img style="width: 37px;height: 45px;padding: 4px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYE0peAYNpnYWxNmFhMwvPybvZNZp-LaRoxw&s" alt="">
+        </div>
+        </div> 
 <div class="book-deails-main-cnt" >
         <div style="width:700px ;" > 
-            <div>
-            <img src="{{selectBook.bookImage}}" style="width: 250px; height: 250px; padding: 40px;">
+            <div style="width: 361;height:413;background: #FFFFFF ;border: 1px solid #D1D1D1;border-radius: 2px;">
+            <img src="{{selectBook.bookImage}}" style="width: 282px; height: 364px; padding: 23px 40px;">
             </div>
-            <div style="display: flex;flex-direction: row;gap: 10px;">
-                <button style="background-color: rgb(204, 41, 41);color: white; padding: 12px;width: 165px;" 
+            <div  style="display: flex;flex-direction: row;">
+                <button *ngIf="!bookCount" class="add-to-bag" 
                     mat-raised-button color="primary" (click)="handleAddBook(selectBook)">ADD TO BAG</button>
-
-                <button style="background-color: rgba(0, 0, 0, 0.84);color: white;width: 165px;" mat-raised-button color="primary" > 
-                    <div style="display: flex;flex-direction: row;" >
-                        <mat-icon svgIcon="heart-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 5px;margin-top: 12px;"></mat-icon>
-                        <span style="padding:6px;">WISH LIST</span>
+                    <div *ngIf="bookCount" class="count">
+                        <span class="increament" (click)="handlecount('minus',selectBook)">-</span> 
+                        <span class="countvalue">{{count}}</span> <span class="increament" (click)="handlecount('add',selectBook)">+</span>
                     </div>
-             </button>            
+
+                    <button  *ngIf="isWishList ; else disable"class="wishlist" (click)="handleWishList(selectBook.bookId ||0)" mat-raised-button color="primary"> 
+                        <mat-icon svgIcon="heart-icon" aria-hidden="false" aria-label="heart SVG icon"></mat-icon>WISH LIST</button>
+                        <ng-template #disable>
+                            <button   mat-raised-button disabled class="wishlist-hidden">WishList</button>
+        
+                        </ng-template>
+        
             </div>       
         </div>
         <div >
-            <strong>{{selectBook.bookName}}</strong>
+            <span class="bookname">{{selectBook.bookName}}</span>
             <br>
       <span class="book-author-name">{{selectBook.authorName}}</span>
-      <div style="background-color: green;width: 26px;height: 15px;padding-bottom: 1px;">
-      <span style="font-size: 12px;color: #ffffff;font-family: roboto;font-weight: bold;">4.5*</span>
+      <div class="rating-span-tag">
+      <div style="background-color: green;width: 55px;height: 25px;padding-bottom: 1px;">
+      <span style="font-size: 12px;color: #ffffff;font-family: roboto;font-weight: 35px;padding: 14px; margin-top: 8px;">4.5*</span>
     </div>
-      <span class="book-price">Rs. {{selectBook.price}}</span>
-      <hr>
-      <h3>Book Details</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nesciunt rem asperiores similique
-        magni deserunt quos, fugit itaque? Mollitia, nostrum? Distinctio perferendis neque fuga eligendi est</p>
-        <hr>
-        <span>Customer Feedback</span>
+    <div class="span-tag">(20)</div>
+</div>
+      <strong class="book-price">Rs. {{selectBook.price}}</strong>
+      <span class="original-price">Rs.2000</span>
+      <hr  style="width: 585px;height: 0px;border: 1px solid #9D9D9D;">
+      <div class="book-details-cnt">
+      <span class="book-detail">.Book Details</span>
+      <p class="book-detail-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus estundefined</p>
+        
+    </div>
+    <hr style="width: 585px;height: 0px;border: 1px solid #9D9D9D;">
+        <span class="Customer-feedback" >Customer Feedback</span>
         <div>
-            <mat-card>
-                <span>Overall Rating</span>
-                <div>
-                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
-                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
-                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
-                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
-                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;"></mat-icon>
+            <mat-card class="rating" >
+                <span class="overall-rating">Overall Rating</span>
+                <div style="width: 173px;height: 19px; margin-left: -10px;margin-top: 10px;margin-bottom: 10px; display: flex;justify-content: space-evenly;" >
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px; "></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    
                     
                 </div>
+                <div class="write-your-reviev">
+                    <span class="review">Write your review</span>
+                </div>
+                <button class="rating-submit-button">Submit</button>
             </mat-card>
+
+            <div class="customer-review-cnt">
+                <div class="reviewer-name">
+                <span class="review-name-AC">AC</span>
+                
+            </div>
+                <div style="display: flex;flex-direction: column;margin: 0px 0px 8px 8px;">
+                    <span >Aniket Circle</span>
+                    <div style="margin-top: 8px;">
+                    <mat-icon svgIcon="yellow-star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    <mat-icon svgIcon="yellow-star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>         
+                    <mat-icon svgIcon="yellow-star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                </div>
+                <div>
+                    <span class="customer-review">Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct.</span>
+                </div>
+                </div>
+            </div>
+            <div class="customer-review-cnt">
+                <div class="reviewer-name">
+                <span class="review-name-AC">SB</span>
+                
+            </div>
+                <div style="display: flex;flex-direction: column;margin:0px 0px 8px 8px; ;">
+                    <span >Shweta Bodkar</span>
+                    <div style="margin-top: 8px;">
+                    <mat-icon svgIcon="yellow-star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    <mat-icon svgIcon="yellow-star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>         
+                    <mat-icon svgIcon="yellow-star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    <mat-icon svgIcon="yellow-star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                    <mat-icon svgIcon="star-icon" aria-hidden="false" aria-label="heart SVG icon" style="gap: 2px;width: 20px;height: 19px;"></mat-icon>
+                </div>
+                <div>
+                    <span class="customer-review">Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct.</span>
+                </div>
+                </div>
+            </div>
+           
         </div>
         </div>
 
         </div>
     </div>
+    </div>
+
   
 
 

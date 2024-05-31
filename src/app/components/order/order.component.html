@@ -1,0 +1,25 @@
+<div class="orderlist-items">
+    <span class="home" (click)="handleBook()">Home / </span>
+    <span class="items">My OrderList</span>
+ </div>
+    <div class="orderlist-cnt" *ngFor="let order of orderList" >
+        <span class="orderplaced" >Order placed on {{order.OrderDate}} </span>
+                <div class="content"   >
+                    
+                    <div class="book-img">
+                       <img src="{{ order.BookImage}}" alt=""> 
+                    </div>
+                    <div class="cart-detail">
+                        <span class="booktitle">{{order.BookName}}</span>
+                        
+                        <div>
+                        <span style="color: #818181;;">{{order.AuthorName}}</span>
+                    </div>
+                        <div class="rating-cnt">
+                            <span class="sellingprice"><b>Rs.{{order?.Price}}</b><span class="offer">Rs.1999</span></span>
+                        </div>
+                    </div>  
+                    
+                </div>
+            </div>
+    

@@ -1,11 +1,13 @@
 .book-main-cnt{
-    border: 1px solid #ccc;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
     width: 235px;
     height: 275px;
+    margin: 15px;
+
 }
 .book-photo-cnt{
-    background-color:#f3efef;
+    background-color:#F5F5F5;
     width: 233px;
     height: 185px;   
 }
@@ -23,21 +25,66 @@
     flex-direction: column;
 }
 .book-author-name{
+    //width: 63px;
+    height: 13px;
+    /* UI Properties */
     text-align: left;
     font: normal normal normal 10px/13px Roboto;
     letter-spacing: 0px;
     color: #878787;
 }
-// .book-rating{
-//     background-color: green;
-//     margin: 3px;
-//     width: 8px;
-//     height: 7px;
-//     background: #FFFFFF 0% 0% no-repeat padding-box;
-// }
+
 .book-price{
-    font-weight: bold;
-    color: #0A0102;
-    width: 58px;
+    //width: 68px;
     height: 16px;
+    text-align: left;
+    font: normal normal bold 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+}
+.originalprice{
+    width: 36px;
+height: 10px;
+text-align: left;
+text-decoration: line-through;
+font: normal normal normal 10px/13px Roboto;
+letter-spacing: 0px;
+color: #878787;
+}
+.rating{
+width: 23px;
+height: 12px;
+text-align: left;
+font: normal normal bold 10px/13px Roboto;
+background: #388E3C 0% 0% no-repeat padding-box;
+color: white;
+border-radius: 1px;
+}
+.outof{
+    width: 18px;
+height: 13px;
+/* UI Properties */
+text-align: left;
+font: normal normal normal 10px/13px Roboto;
+letter-spacing: 0px;
+color: #878787;
+}
+.book-main-cnt:hover{
+    box-shadow: 0px 0px 5px rgb(111,106,106);
+}
+.book1-main-cnt{
+
+    margin-top: 26px;
+    margin-left: 142px;
+    display: flex;
+    flex-direction: row;
+
+}
+.book
+{
+height: 33px;
+text-align: left;
+font: normal normal normal 25px/33px Roboto;
+letter-spacing: 0px;
+color: #0A0102;
 }

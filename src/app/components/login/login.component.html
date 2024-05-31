@@ -1,10 +1,11 @@
 <div class="login-outer-cnt">
-    <div class="login-img">
-      <img src="https://public-v2links.adobecc.com/d096df37-ca37-4026-553f-8cfa6bec09ec/component?params=component_id%3A634ba680-536e-4b6f-b4a3-41986b9b22f5&params=version%3A0&token=1715680101_da39a3ee_7355e0617a3e07f3f361384055f9da818b436092&api_key=CometServer1" alt="">
+    <div class="login-img" >
+      <img src="assets/cart.png" alt="">
+      <strong>Online Book Shoping</strong>
     </div>
     <div class="login-cnt">
       <div class="login-cnt-inner">
-        <span [ngClass]="{ 'active': activeTab === 'login' }" (click)="setActiveTab('login')">LOGIN</span>
+        <span [ngClass]="{ 'active': activeTab === 'login' }" (click)="setActiveTab('login')" >LOGIN</span>
         <span [ngClass]="{ 'active': activeTab === 'signup' }" (click)="setActiveTab('signup')">SIGNUP</span>
       </div>
       
@@ -13,16 +14,16 @@
         <form [formGroup]="loginForm" class="inputs">
           <div class="email-input">
             <mat-form-field appearance="fill">
-              <mat-label>Enter your email</mat-label>
-              <input matInput placeholder="pat@example.com" formControlName="username" required>
-              <!-- <mat-error *ngIf="loginForm.get('username')?.invalid">{{getErrorMessage('username')}}</mat-error> -->
+              <!-- <mat-label>Enter your email</mat-label> -->
+              <input matInput placeholder="Enter your Email..." formControlName="email" required style="padding: 10px;">
+              <mat-error *ngIf="loginForm.get('email')?.invalid">{{getErrorMessage('email')}}</mat-error>
             </mat-form-field>
           </div>
           
           <div class="password-input">
             <mat-form-field appearance="fill">
-              <mat-label>Enter your password</mat-label>
-              <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+              <!-- <mat-label>Enter your password</mat-label> -->
+              <input matInput placeholder="Enter your Password..." formControlName="password" [type]="hide ? 'password' : 'text'" style="padding: 10px;">
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
@@ -44,33 +45,33 @@
         <div class="sign-up">
           <form [formGroup]="signupForm" class="sign-up-fields">
             <mat-form-field appearance="outline">
-              <mat-label>Full Name</mat-label>
-              <input matInput placeholder="Full Name" formControlName="fullName">
-              <!-- <mat-error *ngIf="signupControl['fullName'].invalid">{{getErrorMessage('fullName')}}</mat-error> -->
+              <!-- <mat-label>Full Name</mat-label> -->
+              <input matInput placeholder="Full Name" formControlName="fullName" style="padding: 10px;border:thick 5px white;">
+              <mat-error *ngIf="signupControl['fullName'].invalid">{{getErrorMessage('fullName')}}</mat-error>
             </mat-form-field>
             
             <mat-form-field appearance="outline">
-              <mat-label>Email</mat-label>
-              <input matInput placeholder="Email" formControlName="email">
-              <!-- <mat-error *ngIf="signupControl['email'].invalid">{{getErrorMessage('email')}}</mat-error> -->
+              <!-- <mat-label>Email</mat-label> -->
+              <input matInput placeholder="Email" formControlName="email" style="padding: 10px;">
+              <mat-error *ngIf="signupControl['email'].invalid">{{getErrorMessage('email')}}</mat-error>
             </mat-form-field>
             
             <mat-form-field appearance="outline">
-              <mat-label>Password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+              <!-- <mat-label>Password</mat-label> -->
+              <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" style="padding: 10px;">
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
-              <!-- <mat-error *ngIf="signupControl['password'].invalid">{{getErrorMessage('password')}}</mat-error> -->
+              <mat-error *ngIf="signupControl['password'].invalid">{{getErrorMessage('password')}}</mat-error>
             </mat-form-field>
             
             <mat-form-field appearance="outline">
-              <mat-label>Mobile Number</mat-label>
-              <input matInput placeholder="Mobile Number" formControlName="mobileNumber">
-              <!-- <mat-error *ngIf="signupControl['mobileNumber'].invalid">{{getErrorMessage('mobileNumber')}}</mat-error> -->
+              <!-- <mat-label>Mobile Number</mat-label> -->
+              <input matInput placeholder="Mobile Number" formControlName="mobileNumber" style="padding: 10px;">
+              <mat-error *ngIf="signupControl['mobileNumber'].invalid">{{getErrorMessage('mobileNumber')}}</mat-error>
             </mat-form-field>
             
-            <button style="width: 100%;" mat-raised-button color="primary" (click)="signupmeth()">Signup</button>
+            <button style="width: 100%; margin: 10px; color: white;background-color: brown;" mat-raised-button color="primary" (click)="signupmeth()">Signup</button>
           </form>
         </div>
       </ng-template>

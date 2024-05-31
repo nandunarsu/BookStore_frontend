@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { BookService } from 'src/app/services/bookService/book.service';
 import { DataService } from 'src/app/services/dataService/data.service';
 
@@ -9,12 +10,16 @@ import { DataService } from 'src/app/services/dataService/data.service';
   styleUrls: ['./book-container.component.scss']
 })
 export class BookContainerComponent implements OnInit {
-  @Input() booksData:any[]=[]
+  @Input() booksData:[]=[]
   bookList:any;
+  searchString:string=' '
+  subscription!:Subscription
   constructor(private router:Router,private bookService:BookService,private dataService:DataService) { }
 
   ngOnInit():void {
-    this.dataService.allBookState.subscribe((res)=> (this.booksData=res));
+    this.dataService.allBookState.subscribe((res:any)=> (this.booksData=res));
+    this.subscription=this.dataService.currSearchString.subscribe(res=>this.searchString=res)
+
   }
   handleClick(data:any)
   {
@@ -22,7 +27,7 @@ export class BookContainerComponent implements OnInit {
     console.log(data.bookId);
     // this.router.navigate([`/bookdetails`]);
    this.router.navigate([`/dashboard/bookdetails`,data.bookId]);
-    //console.log(this.bookList)
+    console.log(this.bookList)
    
   }
 

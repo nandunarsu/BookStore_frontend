@@ -1,20 +1,46 @@
 <div class="header-main-cnt">
-    <div class="header-cnt">
-    <div class="header-book-cnt">
-    <img class="keep-pic" src="assets/education.svg">
-    <span>BookStore</span>
-    </div>
+    <img class="education-pic" src="assets/education.svg">
+    <span class="bookstore" routerLink="/dashboard/book">BookStore</span>
+    
     <div class="header-search-cnt">
-    <input class="search-input" type="text" placeholder="search...">
     <mat-icon class="search-icon" svgIcon="search-icon"></mat-icon>
+    <input class="search-input" type="text" placeholder="Search..." [(ngModel)]="searchString" (input)="handleSearchString()">
     </div>
-    <div class="header-cart-cnt" routerLink="cart">
+
+    <div class="profile"   matTooltip="Profile" [matMenuTriggerFor]="Profile">
+        <mat-icon class="profile-icon"  svgIcon="profile-icon" aria-hidden="false" aria-label="Profile SVG icon"></mat-icon>
+        <span>Profile</span>
+    </div>
+          
+    
+    <div class="header-cart-cnt"  (click)="handleCart()">
     <mat-icon svgIcon="cart-icon"></mat-icon>
-    <span>Cart</span>
+    <span style="width: 40px;height: 13px;text-align: centre;font:normal normal normal 10px/13px Roboto;letter-spacing: 0.45px;">Cart</span>
     </div>
-    <div class="header-profile-cnt">
-    <mat-icon svgIcon="profile-icon"></mat-icon>
-    <span>Profile</span>
+
+
+</div>
+
+<mat-menu #Profile="matMenu">
+    <div class="profile-history" *ngIf="loginLogOut">
+        <span><b>Welcome</b></span>
+        <span>To access account and manage orders</span>
+        <div class="login-signup">
+            <button mat-stroked-button color="warn" (click)="login()">LOGIN/SIGNUP</button>
+        </div>
+        <div> 
+        </div>
     </div>
-</div>
-</div>
+    <div *ngIf="!loginLogOut">
+        <div class="login-signin">
+            <span>Hello Nandini,</span>
+            <div class="profile-icon">Profile</div>
+            <div class="order-icon" (click)="handleOrders()">My Orders</div>
+            <div class="heart-icon" (click)="handleMywishList()">&#x2764;My Wishlist</div>
+            <button mat-stroked-button color="warn" (click)="logout()">LOGOUT</button>
+        </div>
+    </div>
+</mat-menu>
+
+
+   
