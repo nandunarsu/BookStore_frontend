@@ -29,6 +29,8 @@ import { OrderComponent } from './components/order/order.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { OrderplacedComponent } from './components/orderplaced/orderplaced.component';
 import { SearchPipe } from './pipe/search.pipe';
+import { Header1Component } from './components/header1/header1.component';
+//import { Header1Component } from './components/header1/header1.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { SearchPipe } from './pipe/search.pipe';
     OrderComponent,
     WishlistComponent,
     OrderplacedComponent,
-    SearchPipe
+    SearchPipe,
+    Header1Component
   ],
   imports: [
     BrowserModule,

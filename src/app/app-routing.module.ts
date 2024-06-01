@@ -11,8 +11,11 @@ import { LoginComponent } from './components/login/login.component';
 import { OrderComponent } from './components/order/order.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { OrderplacedComponent } from './components/orderplaced/orderplaced.component';
+import { Header1Component } from './components/header1/header1.component';
 
 const routes: Routes = [
+  {path:'', redirectTo:"dashboard/book",pathMatch:'prefix'},
+  {path:'header1',component:Header1Component},
   {path:'header',component:HeaderComponent},
   {path:'bookcnt',component:BookContainerComponent},
   {path:'login',component:LoginComponent},

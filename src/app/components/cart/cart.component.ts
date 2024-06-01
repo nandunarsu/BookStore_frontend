@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
   
  
   ngOnInit(): void {
-    if (localStorage.getItem('AuthToken') != null) {
+    // if (localStorage.getItem('AuthToken') != null) {
        this.cartService.getCartApi().subscribe((result1:any) => {
          //this.dataService.currCartList.subscribe((result1:any) => {
           console.log("cartresult",result1);
@@ -57,10 +57,10 @@ export class CartComponent implements OnInit {
           console.log("km",this.cartList);
       });
       this.loadAddresses();
-    }
-     else {
-       this.cartList = this.dataService.currCartList.subscribe((res:any) => res.bookQuantity >= 1);
-    }
+    // }
+    //  else {
+    //    this.cartList = this.dataService.currCartList.subscribe((res:any) => res.quantity >= 1);
+    // }
 
     this.addressForm = this.formbuilder.group({
       name: [this.emptyAddress.name, Validators.required],
@@ -112,6 +112,8 @@ export class CartComponent implements OnInit {
     else {
       const dialogRef = this.dialog.open(LoginComponent, { width: '720px', height: '480px' });
       dialogRef.afterClosed().subscribe((result:any) => {});
+      this.loadAddresses();
+
     }
   }
 

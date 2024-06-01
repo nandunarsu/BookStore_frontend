@@ -99,9 +99,9 @@ export class BookDetailsComponent implements OnInit,OnDestroy {
     this.cartService.addCartApi({ quantity: 1, bookId: data.bookId }).subscribe((res:any) => this.cartId = res, err => {
        this.tempcart[this.tempcart.length] = data;
       this.tempcart[0].quantity = 1;
-      this.matSnackBar.open("Book added to Cart Successfully...!",'', {
-        duration: 3000
-      })
+      // this.matSnackBar.open("Book added to Cart Successfully...!",'', {
+      //   duration: 3000
+      // })
     //var tempdata=[];
     // tempdata[tempdata.length]=data;
      this.dataService.changeTempCart(this.tempcart);

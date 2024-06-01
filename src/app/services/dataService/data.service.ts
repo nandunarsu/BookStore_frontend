@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { HttpService } from '../http/http.service';
+// import { HttpService } from '../http/http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +38,7 @@ export class DataService {
   private orderList = new BehaviorSubject<any[]>([]);
   currOrderList = this.orderList.asObservable();
 
-  constructor(private httpService: HttpService) { }
+  constructor() { }
 
   updateSearchString(state:string){
     this.searchString.next(state)

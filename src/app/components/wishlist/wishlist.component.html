@@ -1,4 +1,4 @@
-<div class="wishlist-main-cnt">
+<!-- <div class="wishlist-main-cnt">
     <div class="heading-content">
         <div class="wishlist-items">
            <span class="home"(click)="handleBook()">Home / </span>
@@ -25,4 +25,29 @@
                 </div>
 
             </div>
+    </div> -->
+
+    <div class="wishlist-main-cnt">
+        <div class="title-nav">
+            <span class="home-nav" (click)="handleBook()">Home</span>
+            <span class="wishlist-nav">/ My Wishlist</span>
+        </div>
+        <div class="wishlist-cnt" *ngFor="let book of wishList">
+             <div class="wishlist-heading-cnt">
+                 <span class="wishlist-heading">My Wishlist ({{wishList.length}})</span>
+             </div>
+                   <div class="wishlist-books-cnt"  *ngFor="let book of wishList">
+                     <img src="{{ book.BookImage}}" alt="image is not found" class="book-image-cnt">
+                     <div class="book-details">
+                        <span class="book-name">{{book.BookName}}</span>
+                        <span class="author-name">{{book.AuthorName}}</span>
+                        <span class="price">Rs. {{book.Price}}</span>
+                     </div>
+                     <mat-icon class="delete-icon" svgIcon="delete-icon" aria-hidden="false" aria-label="Search SVG icon" (click)="removeWishList(book.WishListId)"></mat-icon>
+                   </div>
+        </div>
+        <div *ngIf="wishList.length === 0" class="empty-wishlist">
+            <span class="content">Your wishlist is empty</span>
+        </div>
     </div>
+    

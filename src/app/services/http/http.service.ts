@@ -1,25 +1,30 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { DataService } from '../dataService/data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
+  token:string=this.dataService.token;
   header= new HttpHeaders({
     Authorization: `Bearer ${localStorage.getItem('AuthToken')}` || ""
   })
   baseUrl:string="https://localhost:7049/api"
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient,private dataService:DataService) { }
   bookApiCall(endpoint:string){
    
     return this.httpClient.get(`${this.baseUrl + endpoint}`);
        
 
   }
-  cartApiCall(endpoint:string){
-    return this.httpClient.get(`${this.baseUrl + endpoint}`,{headers:this.header});
+  cartApiCall(endpoint:string,token?:any){
+    if(token!=null){
+      return this.httpClient.get<any>(`${this.baseUrl + endpoint}`, { headers:new  HttpHeaders({Authorization: `Bearer ${token}`})});
+    }
+    return this.httpClient.get<any>(`${this.baseUrl + endpoint}`,{headers:this.header});
   }
   cartDeleteApiCall(endpoint:string){
     return this.httpClient.delete(`${this.baseUrl + endpoint}`,{headers:this.header});
@@ -30,7 +35,7 @@ export class HttpService {
     addToCartApiCall(endpoint:string,data:any){
       return this.httpClient.post(`${this.baseUrl + endpoint}`,data,{headers:this.header});
     }
-    addToCart(endpoint:string,data:{quantity:number,bookId:number},token?:string):Observable<any>
+    addToCart(endpoint:string,data:{quantity:number,bookId:number},token?:any):Observable<any>
     {
       if(token!=null)
         {
@@ -67,13 +72,20 @@ export class HttpService {
     getAllOrder():Observable<any> {
       return this.httpClient.get(`${this.baseUrl}/Order/GetOrder`,{headers:this.header})
     }
-    getWishList():Observable<any>
+    getWishList(token?:any):Observable<any>
   {
+    if(token!=null){
+      return this.httpClient.get<any>(`${this.baseUrl}/WishList`, { headers:new  HttpHeaders({Authorization: `Bearer ${token}`})});
+    }
     return this.httpClient.get<any>(`${this.baseUrl}/WishList`,{headers:this.header})
   }
-  addWishList(BookId:number):Observable<any>{
+  addWishList(BookId:number,token? : any):Observable<any>{
+    if(token!=null){
+      return this.httpClient.post <any>(`${this.baseUrl}/WishList`, {},{ headers:new  HttpHeaders({Authorization: `Bearer ${token}`})});
+      }
+    
     // const requestBody = { bookId: bookId};
-    return this.httpClient.post(`${this.baseUrl}/WishList`,{bookId: BookId},{headers:this.header})
+    return this.httpClient.post<any>(`${this.baseUrl}/WishList`,{bookId: BookId},{headers:this.header})
   }
   deleteWishList(wishListId:number):Observable<any>
   {

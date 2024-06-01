@@ -1,4 +1,4 @@
-<div class="orderlist-items">
+<!-- <div class="orderlist-items">
     <span class="home" (click)="handleBook()">Home / </span>
     <span class="items">My OrderList</span>
  </div>
@@ -22,4 +22,27 @@
                     
                 </div>
             </div>
-    
+     -->
+
+     <div class="orderlist-main-cnt">
+        <div class="title-nav">
+            <span class="home-nav" (click)="handleBook()">Home</span>
+            <span class="order-nav">/ My Order</span>
+        </div>
+        <div class="orderlist-cnt" *ngIf="orderList.length > 0">
+                <div *ngFor="let item of orderList" class="orderlist-books-cnt">
+                    <img src="{{item.BookImage}}" alt="image is not found" class="book-image-cnt">
+                    <div class="book-details">
+                       <span class="book-name">{{item.BookName}}</span>
+                       <span class="author-name">{{item.AuthorName}}</span>
+                       <span class="price">Rs. {{item.Price}}</span>
+                    </div>
+                    <ul class="circle-list">
+                        <li><span class="order-date">Order placed on {{item.OrderDate}}</span></li>
+                    </ul>
+                </div>
+        </div>
+        <div *ngIf="orderList.length === 0" class="empty-orderlist">
+            <span class="content">Your wishlist is empty</span>
+        </div>
+    </div>

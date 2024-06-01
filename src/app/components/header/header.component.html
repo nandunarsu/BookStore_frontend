@@ -10,7 +10,30 @@
     <div class="profile"   matTooltip="Profile" [matMenuTriggerFor]="Profile">
         <mat-icon class="profile-icon"  svgIcon="profile-icon" aria-hidden="false" aria-label="Profile SVG icon"></mat-icon>
         <span>Profile</span>
+        <mat-menu #Profile="matMenu">
+            <!-- <span>Hello</span> -->
+            <div class="profile-history" *ngIf="loginLogOut">
+                <span><b>Welcome</b></span>
+                <span>To access account and manage orders</span>
+                <div class="login-signup">
+                    <button mat-stroked-button color="warn" (click)="login()">LOGIN/SIGNUP</button>
+                </div>
+
+            </div>
+            <div *ngIf="!loginLogOut">
+                <div class="login-signin">
+                    <span>Hello Nandini,</span>
+                    <div class="profile-icon">Profile</div>
+                    <div class="order-icon" (click)="handleOrders()">My Orders</div>
+                    <div class="heart-icon" (click)="handleMywishList()">&#x2764;My Wishlist</div>
+                    <button mat-stroked-button color="warn" (click)="logout()">LOGOUT</button>
+                </div>
+            </div>
+        </mat-menu>
+        
     </div>
+
+ 
           
     
     <div class="header-cart-cnt"  (click)="handleCart()">
@@ -21,26 +44,6 @@
 
 </div>
 
-<mat-menu #Profile="matMenu">
-    <div class="profile-history" *ngIf="loginLogOut">
-        <span><b>Welcome</b></span>
-        <span>To access account and manage orders</span>
-        <div class="login-signup">
-            <button mat-stroked-button color="warn" (click)="login()">LOGIN/SIGNUP</button>
-        </div>
-        <div> 
-        </div>
-    </div>
-    <div *ngIf="!loginLogOut">
-        <div class="login-signin">
-            <span>Hello Nandini,</span>
-            <div class="profile-icon">Profile</div>
-            <div class="order-icon" (click)="handleOrders()">My Orders</div>
-            <div class="heart-icon" (click)="handleMywishList()">&#x2764;My Wishlist</div>
-            <button mat-stroked-button color="warn" (click)="logout()">LOGOUT</button>
-        </div>
-    </div>
-</mat-menu>
 
 
    
